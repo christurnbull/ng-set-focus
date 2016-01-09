@@ -1,0 +1,29 @@
+{
+  "name": "ng-set-focus",
+  "version": "0.1.0",
+  "description": "Angular directive to set an element focus via the controller scope",
+  "main": "ngSetFocus.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "angular",
+    "directive",
+    "focus"
+  ],
+  "authors": [
+    "Chris Turnbull"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/christurnbull/ng-set-focus",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.0"
+  }
+}
