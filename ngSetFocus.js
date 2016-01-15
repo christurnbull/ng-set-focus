@@ -22,7 +22,7 @@ angular.module('ngSetFocus', [])
             // after other events have complete
             $timeout(function(){
               element[0].focus();
-            }, 1);
+            }, 200);
 
           }
         })
@@ -32,7 +32,7 @@ angular.module('ngSetFocus', [])
           if(attrs.hasOwnProperty('setFocusDefault')){
             element[0].focus();
           }
-        }, 1);
+        }, 200);
 
   	  }	  
   	};
