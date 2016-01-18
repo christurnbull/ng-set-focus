@@ -1,8 +1,8 @@
 # ng-set-focus
 
-Angular directive to set an element focus via the controller scope
+Angular directive to set an element focus via the controller
 
-DEMO: https://plnkr.co/edit/cS4Xi5zlxuLRnPqznoOn?p=preview
+DEMO: https://embed.plnkr.co/HBGq2Z3ERqukk7TGLlGt/
 
 ## Installation
 
@@ -23,8 +23,8 @@ Add module to your application module dependencies
 Scope variables are observed for changes. To set focus on an element toggle the assigned scope variable.
 
 ```
-<input ng-set-focus="{{textInput}}" set-focus-default />
-<button ng-click="textInput =! textInput">Set Focus</button>
+<input ng-set-focus="textInput" set-focus-default />
+<button ng-click="$broadcast('textInput')"> Set Focus </button>
 ```
 
 ## Dependencies

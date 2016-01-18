@@ -13,26 +13,29 @@ angular.module('ngSetFocus', [])
   	  restrict: 'A',
   	  link: function(scope, element, attrs) {
         
-        // set focus when attribute variable has changed
-        attrs.$observe('ngSetFocus', function() {
-          
-          // dont set focus on load
-          if(attrs.ngSetFocus == 'true' || attrs.ngSetFocus == 'false'){
-            
-            // after other events have complete
-            $timeout(function(){
-              element[0].focus();
-            }, 200);
+        var delay= 300;
+        
+        // set focus on broadcast
+        scope.$on(attrs.ngSetFocus, function(e) {
+          $timeout(function(){
+            element[0].focus();
+          }, delay);
 
-          }
-        })
-  	    
-  	    // apply default focus after other events have complete
-  	    $timeout(function(){
+        });   
+        
+        // apply default focus after other events have complete
+  	    $timeout(function(){          
           if(attrs.hasOwnProperty('setFocusDefault')){
             element[0].focus();
           }
-        }, 200);
+        }, delay);
+        
+        // fix for default focus on iOS. Does not show keyboard
+        element.on('touchstart', function(event) {
+          if(attrs.hasOwnProperty('setFocusDefault')){
+            element[0].blur();
+          }
+        });
 
   	  }	  
   	};
