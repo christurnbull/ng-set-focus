@@ -32,9 +32,7 @@ angular.module('ngSetFocus', [])
         
         // fix for default focus on iOS. Does not show keyboard
         element.on('touchstart', function(event) {
-          if(attrs.hasOwnProperty('setFocusDefault')){
-            element[0].blur();
-          }
+          element[0].blur();
         });
 
   	  }	  
